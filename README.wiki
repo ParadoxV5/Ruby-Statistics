@@ -1,0 +1,4 @@
+= Ruby Statistics =
+This little library adds many statistics methods to Ruby’s core modules, including summary functions for Enumerable and quantile functions for Array.
+
+This is currently updated for compatiblity with '''Ruby 2.7.x'''.
