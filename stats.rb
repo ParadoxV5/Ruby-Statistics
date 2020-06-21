@@ -6,26 +6,18 @@ def prod(init = 1, &blk)
 end
 
 def average
-  Float(sum) / count
-end
-def average_r
-  Rational(sum, count)
+  sum / count.to_r
 end
 
 alias :mean :average
 alias :arithmetic_mean :mean
-alias :mean_r :average_r
-alias :arithmetic_mean_r :mean_r
 
 def harmonic_mean
-  1 / sum {|n| 1.0 / n}
-end
-def harmonic_mean_r
-  Rational(1, sum {|n| Rational(1, n)})
+  1r / sum {|n| 1r / n}
 end
 
 def geometric_mean
-  prod ** Rational(1, count)
+  prod ** 1r / count
 end
 
 def sum2(init = 0)
@@ -37,10 +29,7 @@ def sum2(init = 0)
 end
 
 def variance
-  Float(sum2) / count - average ** 2
-end
-def variance_r
-  Rational(sum2, count) - average_r ** 2
+  sum2 / count.to_r - average ** 2
 end
 
 def stddev

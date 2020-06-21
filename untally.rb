@@ -3,7 +3,7 @@ class Hash
 
 def untally(&blk)
   a = []
-  if blk
+  if block_given?
     each {|x, n| a << Array.new(n, &blk)}
   else
     each {|x, n| a << Array.new(n, x)}
@@ -12,7 +12,7 @@ end
 
 def flat_untally(&blk)
   a = []
-  if blk
+  if block_given?
     each {|x, n| a.push(*Array.new(n, &blk))}
   else
     each {|x, n| a.push(*Array.new(n, x))}

@@ -3,7 +3,7 @@ module Enumerable
   private(:old_tally)
   def tally
     if block_given?
-      each {|x| yield(x) }.old_tally
+      lazy.map {|x| yield(x)}.old_tally
     else
       old_tally
     end
